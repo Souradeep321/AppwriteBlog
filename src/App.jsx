@@ -6,6 +6,7 @@ import { login, logout } from './store/authSlice'
 import { Header } from './components/index'
 import { Footer } from './components/index'
 import { Outlet } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -27,7 +28,6 @@ function App() {
       })
       .finally(() => setLoading(false))
   }, [])
-  
   // if (loading) {
   //   return <h1 className="text-2xl text-center text-gray-600">Loading...</h1>;
   // }
@@ -39,15 +39,17 @@ function App() {
   // );
 
   return !loading ?
-    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
-      <div className="w-full block">
-        <Header />
-        <main>
-          TODO: {/* <Outlet /> */}
-        </main>
-        <Footer />
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+        <div className="w-full block">
+          <Header />
+          <main>
+            TODO: {/* <Outlet /> */}
+          </main>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
     : <h1 className="text-2xl text-center text-gray-600">Loading...</h1>;
 }
 
