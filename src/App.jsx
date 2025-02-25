@@ -28,6 +28,7 @@ function App() {
       })
       .finally(() => setLoading(false))
   }, [])
+
   // if (loading) {
   //   return <h1 className="text-2xl text-center text-gray-600">Loading...</h1>;
   // }
