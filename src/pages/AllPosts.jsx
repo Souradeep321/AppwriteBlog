@@ -13,7 +13,7 @@ function AllPosts() {
           setPosts(posts.documents)
         }
       }).catch((error) => {
-        console.error("Error fetching posts:", error) 
+        console.error("Error fetching posts:", error)
       })
   }, [])
 
